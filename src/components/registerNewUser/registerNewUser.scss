@@ -1,0 +1,20 @@
+$buttonGray: #bbbbbb;
+$buttonLightGray: #e1e1e1;
+$ButtonWhite: white;
+
+.button {
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    margin: 10px;
+    cursor: pointer;
+
+    &-ok {
+        background: $buttonGray;
+        color: white;    
+    }
+
+    &-cancel {
+        background: $buttonLightGray; 
+    }
+}

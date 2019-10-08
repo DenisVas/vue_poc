@@ -1,0 +1,44 @@
+$grey: grey;
+$defoulPadding: 10px;
+$borderSetup: 1px solid $grey;
+
+@mixin gridBorder {
+    border-top: $borderSetup;
+    border-left: $borderSetup;
+    border-right: $borderSetup;
+    &:last-child {
+        border-bottom: $borderSetup;
+    }
+}
+.user {
+    &-data {
+        &-list {
+            display: flex;
+            flex-direction: column;
+            list-style:none;
+        }
+        &-item {
+            display: flex;
+            flex-direction: row;
+            @include gridBorder();
+        }
+    }
+}
+
+.info {
+    font-weight: bold;
+    padding: $defoulPadding;
+    border-right: 1px solid grey;
+    width: 100%;
+    &:last-child {
+        border: none;
+    }
+}
+.user-edit-button {
+    background: none;
+    border:none;
+    font-size: 14px;
+    font-weight: bold;
+    color: blue;
+    cursor: pointer;
+}

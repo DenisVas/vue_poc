@@ -1,0 +1,37 @@
+$grey: grey;
+$lightGrey:lightgray;
+.user {
+    &-edit {
+        &-field {
+            float: left;
+            border: 1px solid $grey;
+            display: flex;
+            text-align: left;
+            margin: 5px;
+            label {
+                padding-right: 10px;
+                font-weight: 600;
+            }
+            input {
+                border: none;
+                padding: 5px 5px 1px 2px;
+                border-bottom: 2px solid $lightGrey;
+            }
+        }
+    }
+    &-form {}
+    &-data {
+        &-fields {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}
+.form {
+    &-section {
+        &-title {
+            text-align: left;
+            width: 100%;
+        }
+    }
+}
