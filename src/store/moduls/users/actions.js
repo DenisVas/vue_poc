@@ -13,10 +13,9 @@ export default {
     normalizeUserList: ({ commit, getters }, newFieldsSet) => {
         let userList = getters.getUserListCopy; // prevent mutations
         let bulkCard = getters.getBulkCardCopy; // prevent mutations
-
         // remove fields
         for(let dataCategory in newFieldsSet.removedFields) {
-            for(let dataKey in newFieldsSet.removedFields) {
+            for(let dataKey in newFieldsSet.removedFields[dataCategory]) {
                 delete bulkCard[dataCategory][dataKey];
                 userList = userList.map(user => {
                     delete user[dataCategory][dataKey];

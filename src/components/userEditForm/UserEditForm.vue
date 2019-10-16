@@ -7,12 +7,14 @@
             <fieldset class="user-edit-field" 
             v-for="(data, index) in localuser[categoryKey]" 
             :key="categoryKey + '-' + index">
+                <span class="user-remove-field" @click="removeField(data.fieldName, categoryKey)">X</span>
                 <label :for="'system-' + data.fieldName">{{data.fieldName}}:</label>
                 <input v-model="data.value" :disabled="categoryKey === 'system'"/>
             </fieldset>
             <fieldset class="user-edit-field" 
             v-for="(data, index) in newFileds[categoryKey]" 
             :key="'new-' + categoryKey + '-' + index">
+                <span class="user-remove-field" @click="removeField(data.fieldName, categoryKey)">X</span>
                 <input @input="liveValidate" v-model.lazy="data.fieldName" required/>
                 <input v-model="data.value"/>
             </fieldset>
@@ -95,6 +97,11 @@ export default {
                 fieldName: '', 
                 value: '' 
             });
+        },
+
+        removeField(fieldName, fieldCategory) {            
+           this.localuser[fieldCategory] = this.localuser[fieldCategory].filter(data => data.fieldName !== fieldName);
+           this.newFileds[fieldCategory] = this.newFileds[fieldCategory].filter(data => data.fieldName !== fieldName)
         },
 
         clearNewFields() {
