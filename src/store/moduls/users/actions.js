@@ -15,8 +15,8 @@ export default {
         let bulkCard = getters.getBulkCardCopy; // prevent mutations
 
         // remove fields
-        for(let dataCategory in newFieldsSet.removedFields) { // sytem / public / private
-            for(let dataKey in newFieldsSet.removedFields) { // changed fields
+        for(let dataCategory in newFieldsSet.removedFields) {
+            for(let dataKey in newFieldsSet.removedFields) {
                 delete bulkCard[dataCategory][dataKey];
                 userList = userList.map(user => {
                     delete user[dataCategory][dataKey];
