@@ -7,7 +7,9 @@
             <fieldset class="user-edit-field" 
             v-for="(data, index) in localuser[categoryKey]" 
             :key="categoryKey + '-' + index">
-                <span class="user-remove-field" @click="removeField(data.fieldName, categoryKey)">X</span>
+                <span v-if="categoryKey !== 'system'" 
+                class="user-remove-field" 
+                @click="removeField(data.fieldName, categoryKey)">X</span>
                 <label :for="'system-' + data.fieldName">{{data.fieldName}}:</label>
                 <input v-model="data.value" :disabled="categoryKey === 'system'"/>
             </fieldset>
