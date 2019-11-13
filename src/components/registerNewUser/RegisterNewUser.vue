@@ -66,4 +66,4 @@ export default {
     }
 }
 </script>
-<style lang="scss" src="./registerNewUser.scss" />
+<style lang="scss" src="./registerNewUser.scss" scoped />
